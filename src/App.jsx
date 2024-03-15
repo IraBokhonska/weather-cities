@@ -18,24 +18,28 @@ function App() {
   useEffect(() => {
     const fetchWeather = async () => {
       const message = query.q ? query.q : "current location.";
-      toast.info("Fetching weather for " + message);
-      await getFormattedWeatherData({ ...query, units }).then((data) => {
+      try {
+        toast.info("Fetching weather for " + message);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const data = await getFormattedWeatherData({ ...query, units });
         toast.success(
           `Successfully fetched weather for ${data.name}, ${data.country}.`
         );
         setWeather(data);
-      });
+      } catch (error) {
+        toast.error(`Unfortunately, an error occurred. Please try again.`);
+      }
     };
 
     fetchWeather();
   }, [query, units]);
 
   const formatBackground = () => {
-    if (!weather) return "from-cyan-700 to-blue-700";
+    if (!weather) return "from-cyan-800 to-blue-900";
     const threshold = units === "metric" ? 20 : 60;
-    if (weather.temp <= threshold) return "from-cyan-700 to-blue-700";
+    if (weather.temp <= threshold) return "from-cyan-800 to-blue-900";
 
-    return "from-yellow-700 to-orange-700";
+    return "from-yellow-800 to-orange-900";
   };
 
   return (

@@ -1,6 +1,5 @@
 import React from "react";
-import Clouds from "../assets/images/weather-icons/day/few-clouds-day.svg";
-import { iconUrlFromCode } from "../services/WeatherService";
+import { iconUrlFromCode } from "../services/IconUrlFromCode";
 
 export const Forecast = ({ title, items }) => {
   console.log(items);

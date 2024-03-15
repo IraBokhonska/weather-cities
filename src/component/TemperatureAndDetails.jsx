@@ -1,5 +1,4 @@
 import React from "react";
-import clearDay from "../assets/images/weather-icons/day/clear-day.svg";
 import {
   UilTemperature,
   UilTear,
@@ -10,7 +9,8 @@ import {
   UilArrowDown,
 } from "@iconscout/react-unicons";
 
-import { formatToLocalTime, iconUrlFromCode } from "../services/WeatherService";
+import { formatToLocalTime } from "../services/WeatherService";
+import { iconUrlFromCode } from "../services/IconUrlFromCode";
 
 export const TemperatureAndDetails = ({
   weather: {
