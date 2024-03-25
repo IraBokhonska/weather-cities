@@ -1,1 +1,46 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
 
+@media (max-width: 768px) {
+  .search__wrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .weather__temperature {
+    font-size: 40px;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .line-vertical {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .search__metrics {
+    margin-top: 30px;
+    font-size: 40px;
+  }
+  .search__metrics button {
+    font-size: 25px;
+  }
+
+  .forecast__item img {
+    height: 43px;
+    width: 43px;
+  }
+}

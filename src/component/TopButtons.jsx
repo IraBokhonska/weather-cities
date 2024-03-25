@@ -9,11 +9,11 @@ export default function TopButtons({ setQuery }) {
     { id: 5, title: "Paris" },
   ];
   return (
-    <div className="flex items-center justify-around my-6 ">
+    <div className="cities flex flex-wrap gap-2 items-center justify-around my-6 ">
       {cities.map((city) => (
         <button
           key={city.id}
-          className="text-white text-lg font-medium transition ease-out hover:text-blue-200  "
+          className="city text-white text-lg font-medium transition ease-out hover:text-blue-200  "
           onClick={() => setQuery({ q: city.title })}
         >
           {city.title}
