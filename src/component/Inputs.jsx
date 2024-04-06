@@ -13,6 +13,7 @@ export const Inputs = ({ setQuery, setUnits, units }) => {
   const handleSearchClick = () => {
     if (city !== "") {
       setQuery({ q: city });
+      setCity("");
     }
   };
 

@@ -2,7 +2,6 @@ import React from "react";
 import { iconUrlFromCode } from "../services/IconUrlFromCode";
 
 export const Forecast = ({ title, items }) => {
-  console.log(items);
   return (
     <div className="forecast">
       <div className="forecast__title flex items-center justify-start mt-6">
